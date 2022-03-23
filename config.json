@@ -1,0 +1,20 @@
+{
+    "description": "A policy-enabled authorization plugin for Docker",
+    "documentation": "https://www.openpolicyagent.org/docs/docker-authorization/",
+    "entrypoint": [
+        "/authz"
+    ],
+    "args": {
+        "name": "opa-args",
+        "description": "Arguments for opa-docker-authz",
+        "settable": ["value"],
+        "value": []
+    },
+    "interface": {
+        "socket": "authz.sock",
+        "types": ["docker.authz/1.0"]
+    },
+    "network": {
+        "type": "host"
+    }
+}
